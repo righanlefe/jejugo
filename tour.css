@@ -1,0 +1,677 @@
+/* =====================================================
+   제주 원데이 투어 - 스타일시트
+   ===================================================== */
+
+:root {
+  --brand: #00b4d8;
+  --brand-dark: #0096c7;
+  --brand-light: #90e0ef;
+  --ink: #1a2332;
+  --muted: #6b7280;
+  --light: #f8f9fb;
+  --border: #e5e7eb;
+  --white: #ffffff;
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.14);
+  --transition: 0.25s ease;
+}
+
+/* ===== 리셋 & 기본 ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== 헤더 ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  gap: 16px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.logo-icon { font-size: 22px; }
+.nav-links {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+}
+.nav-link {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: all var(--transition);
+}
+.nav-link:hover {
+  background: var(--light);
+  color: var(--ink);
+}
+.btn-reserve {
+  display: inline-block;
+  background: var(--brand);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: all var(--transition);
+}
+.btn-reserve:hover {
+  background: var(--brand-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 180, 216, 0.35);
+}
+
+/* ===== 히어로 ===== */
+.hero {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    url('https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=1600&q=80') center/cover no-repeat;
+  background-color: #0a3d5c;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10, 35, 66, 0.75) 0%, rgba(0, 100, 148, 0.55) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 80px 20px 100px;
+}
+.hero-sub {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--brand-light);
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+.hero-title {
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.hero-notice {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 32px;
+}
+.hero-cta-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  background: var(--brand);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  transition: all var(--transition);
+  box-shadow: 0 6px 24px rgba(0, 180, 216, 0.4);
+}
+.btn-primary:hover {
+  background: var(--brand-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 180, 216, 0.5);
+}
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  transition: all var(--transition);
+}
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--white);
+}
+.hero-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  line-height: 0;
+  z-index: 3;
+}
+.hero-wave svg { width: 100%; height: 80px; }
+
+/* ===== 섹션 공통 ===== */
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.section-title {
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.section-desc {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+/* ===== 투어 섹션 ===== */
+.tours-section {
+  background: var(--light);
+  padding: 80px 0;
+}
+
+/* 시즌 탭 */
+.season-tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.season-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  border: 2px solid transparent;
+  background: var(--white);
+  color: var(--muted);
+  transition: all var(--transition);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.season-tab:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+}
+.season-tab.active {
+  color: var(--white);
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+.season-tab-emoji { font-size: 18px; }
+
+/* 시즌 정보 */
+.season-info {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeIn 0.3s ease;
+}
+.season-info-period {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--white);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+.season-info-desc {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* 코스 그리드 */
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  animation: fadeIn 0.35s ease;
+}
+
+/* 코스 카드 */
+.tour-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.tour-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+.card-header {
+  padding: 24px 24px 16px;
+  position: relative;
+}
+.card-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--white);
+  letter-spacing: 0.03em;
+}
+.card-badge.badge-new { background: #10b981; }
+.card-badge.badge-recommend { background: #f59e0b; }
+.card-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 8px;
+  padding-right: 60px;
+}
+.card-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.card-meta {
+  display: flex;
+  gap: 16px;
+  padding: 0 24px 16px;
+  flex-wrap: wrap;
+}
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.meta-icon { font-size: 15px; }
+.card-highlights {
+  padding: 0 24px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.highlight-tag {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--light);
+  color: var(--ink);
+  font-weight: 500;
+}
+.card-footer {
+  margin-top: auto;
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.card-price-group {}
+.card-price-note {
+  font-size: 11px;
+  color: var(--muted);
+}
+.card-price {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.card-price span {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.btn-schedule {
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--brand);
+  border: 2px solid var(--brand);
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.btn-schedule:hover {
+  background: var(--brand);
+  color: var(--white);
+}
+
+/* ===== 이용 안내 ===== */
+.how-section {
+  padding: 80px 0;
+  background: var(--white);
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+}
+.step-card {
+  text-align: center;
+  padding: 36px 24px;
+  border-radius: var(--radius-lg);
+  background: var(--light);
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+}
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  background: var(--white);
+}
+.step-num {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--brand);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+.step-icon {
+  font-size: 36px;
+  margin-bottom: 14px;
+}
+.step-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.step-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ===== 문의 섹션 ===== */
+.contact-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #0a3d5c 0%, #005f8a 100%);
+}
+.contact-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.contact-card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 32px 36px;
+  text-align: center;
+  color: var(--white);
+  min-width: 220px;
+  transition: all var(--transition);
+  text-decoration: none;
+  display: block;
+  backdrop-filter: blur(8px);
+}
+.contact-card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+.contact-card-icon { font-size: 36px; margin-bottom: 12px; }
+.contact-card-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+.contact-card-value {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* ===== 모달 ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-box {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform var(--transition);
+}
+.modal-overlay.open .modal-box {
+  transform: translateY(0);
+}
+.modal-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  margin: 16px 16px 0 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--light);
+  color: var(--muted);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+  z-index: 10;
+}
+.modal-close:hover { background: var(--border); color: var(--ink); }
+.modal-content { padding: 24px 28px 32px; }
+.modal-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.modal-desc {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.modal-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: var(--light);
+  border-radius: var(--radius-sm);
+}
+.schedule-list { list-style: none; }
+.schedule-item {
+  display: flex;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.schedule-item:last-child { border-bottom: none; }
+.schedule-time {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--brand);
+  min-width: 46px;
+  padding-top: 2px;
+}
+.schedule-body {}
+.schedule-place {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.schedule-desc {
+  font-size: 13px;
+  color: var(--muted);
+}
+.modal-reserve {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+  background: var(--brand);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  transition: all var(--transition);
+}
+.modal-reserve:hover {
+  background: var(--brand-dark);
+}
+
+/* ===== 푸터 ===== */
+.site-footer {
+  background: var(--ink);
+  padding: 40px 0;
+  text-align: center;
+}
+.footer-logo {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.footer-copy {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ===== 스크롤 Top ===== */
+.scroll-top {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: var(--white);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 180, 216, 0.4);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all var(--transition);
+  pointer-events: none;
+  z-index: 300;
+}
+.scroll-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.scroll-top:hover {
+  background: var(--brand-dark);
+  transform: translateY(-2px);
+}
+
+/* ===== 애니메이션 ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== 반응형 ===== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hero { min-height: 440px; }
+  .hero-content { padding: 60px 20px 80px; }
+  .hero-title { font-size: 36px; }
+  .tour-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-cards { flex-direction: column; align-items: center; }
+  .contact-card { width: 100%; max-width: 320px; }
+}
+
+@media (max-width: 480px) {
+  .steps-grid { grid-template-columns: 1fr; }
+  .hero-cta-group { flex-direction: column; }
+  .btn-primary, .btn-outline { text-align: center; justify-content: center; }
+  .logo-text { display: none; }
+}
